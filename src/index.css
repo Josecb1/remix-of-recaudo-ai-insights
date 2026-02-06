@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/* Recaudo AI - Brand Design System */
+/* Colors extracted from recaudo.ai */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 60% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 60% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 60% 8%;
+
+    /* Primary: Lime Green - Recaudo CTA color */
+    --primary: 65 85% 60%;
+    --primary-foreground: 220 60% 8%;
+
+    /* Secondary: Navy Blue surfaces */
+    --secondary: 220 50% 96%;
+    --secondary-foreground: 220 60% 8%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 25% 45%;
+
+    /* Accent: Lime Green - Recaudo CTA color */
+    --accent: 68 75% 55%;
+    --accent-foreground: 220 60% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 80% 45%;
+
+    --radius: 0.75rem;
+
+    /* Recaudo Brand Tokens */
+    --navy-deep: 222 80% 5%;
+    --navy-dark: 220 70% 12%;
+    --navy-medium: 216 60% 25%;
+    --royal-blue: 214 65% 40%;
+    --sky-blue: 200 80% 75%;
+    --sky-light: 198 90% 94%;
+    --lime-accent: 68 75% 55%;
+    
+    /* Custom Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(214 80% 45%) 0%, hsl(214 65% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(220 70% 12% / 0.03) 0%, transparent 50%);
+    --gradient-brand: linear-gradient(180deg, hsl(222 80% 5%) 0%, hsl(220 70% 12%) 16%, hsl(216 60% 25%) 30%, hsl(214 65% 40%) 50%, hsl(200 80% 75%) 75%, hsl(0 0% 100%) 100%);
+    --shadow-soft: 0 4px 20px -4px hsl(220 60% 8% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(220 60% 8% / 0.12);
+    --shadow-glow: 0 0 40px hsl(214 80% 45% / 0.2);
+    --shadow-lime: 0 0 30px hsl(68 75% 55% / 0.3);
+
+    /* Success/Positive */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Chart Colors - Recaudo palette */
+    --chart-primary: 214 80% 45%;
+    --chart-secondary: 68 75% 55%;
+    --chart-tertiary: 200 80% 75%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 60% 8%;
+    --sidebar-primary: 214 80% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 220 60% 8%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 214 80% 45%;
+  }
+
+  .dark {
+    --background: 222 80% 5%;
+    --foreground: 210 40% 96%;
+
+    --card: 220 70% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 220 70% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 214 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 60% 12%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 220 50% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 68 75% 55%;
+    --accent-foreground: 220 60% 8%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 50% 18%;
+    --input: 220 50% 18%;
+    --ring: 214 80% 50%;
+
+    --sidebar-background: 222 80% 5%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 214 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 60% 12%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 220 50% 18%;
+    --sidebar-ring: 214 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
