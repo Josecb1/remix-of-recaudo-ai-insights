@@ -310,7 +310,8 @@ const DashboardSection = () => {
                 </div>
 
                 {/* Días con mejor contactabilidad */}
-                <div className="grid grid-cols-5 gap-2">
+                {/* Mobile: horizontal list with bars. Desktop: 5-col grid */}
+                <div className="hidden sm:grid grid-cols-5 gap-2">
                   {[
                     { day: "Lun", rate: 72, best: false },
                     { day: "Mar", rate: 85, best: true },
@@ -334,26 +335,46 @@ const DashboardSection = () => {
                       <p className={`text-xs font-medium ${item.best ? "text-foreground" : "text-muted-foreground"}`}>
                         {item.day}
                       </p>
-                      <motion.p 
-                        className={`text-lg font-bold ${item.best ? "text-foreground" : "text-foreground"}`}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.5 + idx * 0.05 }}
-                      >
-                        {item.rate}%
-                      </motion.p>
+                      <p className="text-lg font-bold text-foreground">{item.rate}%</p>
                       {item.best && (
-                        <motion.span
-                          initial={{ scale: 0 }}
-                          whileInView={{ scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.7, type: "spring" }}
-                          className="text-[10px] text-foreground font-medium"
-                        >
-                          ⭐ Mejor
-                        </motion.span>
+                        <span className="text-[10px] text-foreground font-medium">⭐ Mejor</span>
                       )}
+                    </motion.div>
+                  ))}
+                </div>
+                {/* Mobile: horizontal bars */}
+                <div className="flex flex-col gap-2 sm:hidden">
+                  {[
+                    { day: "Lun", rate: 72, best: false },
+                    { day: "Mar", rate: 85, best: true },
+                    { day: "Mié", rate: 78, best: false },
+                    { day: "Jue", rate: 88, best: true },
+                    { day: "Vie", rate: 65, best: false },
+                  ].map((item, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + idx * 0.05 }}
+                      className={`flex items-center gap-3 p-2.5 rounded-lg ${
+                        item.best 
+                          ? "bg-primary/20 border border-primary/40" 
+                          : "bg-secondary/50"
+                      }`}
+                    >
+                      <span className="text-xs font-medium text-muted-foreground w-8">{item.day}</span>
+                      <div className="flex-1 h-2 bg-secondary rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${item.rate}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.8, delay: 0.4 + idx * 0.1 }}
+                          className="h-full bg-primary rounded-full"
+                        />
+                      </div>
+                      <span className="text-sm font-bold text-foreground w-10 text-right">{item.rate}%</span>
+                      {item.best && <span className="text-[10px]">⭐</span>}
                     </motion.div>
                   ))}
                 </div>
@@ -361,11 +382,11 @@ const DashboardSection = () => {
                 {/* Horarios de recordatorio */}
                 <div className="pt-4 border-t border-border/50">
                   <p className="text-sm font-medium text-foreground mb-3">Mejores horarios de recordatorio</p>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-3">
                     {[
-                      { time: "8:00 - 10:00", label: "Mañana", rate: 82, icon: "🌅" },
-                      { time: "11:00 - 13:00", label: "Mediodía", rate: 75, icon: "☀️" },
-                      { time: "14:00 - 17:00", label: "Tarde", rate: 68, icon: "🌤️" },
+                      { time: "8-10am", timeFull: "8:00 - 10:00", label: "Mañana", rate: 82, icon: "🌅" },
+                      { time: "11-1pm", timeFull: "11:00 - 13:00", label: "Mediodía", rate: 75, icon: "☀️" },
+                      { time: "2-5pm", timeFull: "14:00 - 17:00", label: "Tarde", rate: 68, icon: "🌤️" },
                     ].map((slot, idx) => (
                       <motion.div
                         key={idx}
@@ -374,12 +395,17 @@ const DashboardSection = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.4 + idx * 0.1 }}
                         whileHover={{ y: -3, backgroundColor: "hsl(var(--primary) / 0.1)" }}
-                        className="bg-secondary/40 rounded-lg p-3 text-center cursor-default transition-all"
+                        className="bg-secondary/40 rounded-lg p-3 cursor-default transition-all flex items-center gap-3 sm:flex-col sm:text-center sm:gap-0"
                       >
                         <span className="text-xl">{slot.icon}</span>
-                        <p className="text-xs text-muted-foreground mt-1">{slot.label}</p>
-                        <p className="text-sm font-semibold text-foreground">{slot.time}</p>
-                        <div className="mt-2 h-1.5 bg-secondary rounded-full overflow-hidden">
+                        <div className="flex-1 sm:flex-none">
+                          <p className="text-xs text-muted-foreground sm:mt-1">{slot.label}</p>
+                          <p className="text-sm font-semibold text-foreground">
+                            <span className="sm:hidden">{slot.time}</span>
+                            <span className="hidden sm:inline">{slot.timeFull}</span>
+                          </p>
+                        </div>
+                        <div className="hidden sm:block w-full mt-2 h-1.5 bg-secondary rounded-full overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${slot.rate}%` }}
@@ -388,7 +414,7 @@ const DashboardSection = () => {
                             className="h-full bg-primary rounded-full"
                           />
                         </div>
-                        <p className="text-xs text-foreground font-medium mt-1">{slot.rate}% efectividad</p>
+                        <span className="text-sm font-bold text-primary sm:text-xs sm:font-medium sm:text-foreground sm:mt-1">{slot.rate}%</span>
                       </motion.div>
                     ))}
                   </div>
