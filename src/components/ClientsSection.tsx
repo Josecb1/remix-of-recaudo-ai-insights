@@ -21,12 +21,13 @@ const ClientsSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-card rounded-2xl shadow-card p-8 overflow-hidden"
+          className="bg-card rounded-2xl shadow-card p-2 sm:p-4 md:p-8 overflow-hidden"
         >
           <img
             alt="Empresas que confían en Recaudo AI - Bancolombia, Quipux, Seguros Bolívar, y más"
-            className="w-full h-auto object-contain border rounded-sm"
+            className="w-full h-auto object-contain rounded-sm scale-100 md:scale-100"
             src="/lovable-uploads/2378381b-9991-4f88-b45e-d0ca5c00b4a2.png"
+            style={{ minHeight: '120px' }}
           />
         </motion.div>
       </div>
