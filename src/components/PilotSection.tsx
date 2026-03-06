@@ -33,7 +33,7 @@ const pilotCards = [
 
 const PilotSection = () => {
   return (
-    <section id="inversion" className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
+    <section id="inversion" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-gradient-to-b from-background via-primary/5 to-background relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Badge */}
         <motion.div
@@ -41,22 +41,22 @@ const PilotSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-14"
+          className="text-center mb-8 sm:mb-10 md:mb-14"
         >
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-3 bg-royal/20 border-2 border-royal/60 text-royal font-bold rounded-full text-sm sm:text-lg mb-6"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 md:px-6 py-2 sm:py-3 bg-royal/20 border-2 border-royal/60 text-royal font-bold rounded-full text-xs sm:text-sm md:text-lg mb-4 sm:mb-6"
           >
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
             $0 DE INVERSIÓN INICIAL
-            <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
+            <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           </motion.div>
 
           <motion.h2
-            className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6 font-display px-2"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6 font-display px-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -68,7 +68,7 @@ const PilotSection = () => {
           </motion.h2>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-2"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-2"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -79,7 +79,7 @@ const PilotSection = () => {
         </motion.div>
 
         {/* 3 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mb-12 sm:mb-16">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-8 sm:mb-12 md:mb-16">
           {pilotCards.map((card, idx) => {
             const Icon = card.icon;
             return (
@@ -89,17 +89,19 @@ const PilotSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
-                className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-soft"
+                className={`bg-card border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-soft ${
+                  idx === 2 ? "sm:col-span-2 md:col-span-1" : ""
+                }`}
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-4">{card.title}</h3>
-                <ul className="space-y-3">
+                <h3 className="text-base sm:text-lg font-bold text-foreground mb-3 sm:mb-4">{card.title}</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   {card.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
+                    <li key={i} className="flex items-start gap-2 sm:gap-2.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -114,12 +116,12 @@ const PilotSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-primary/10 border border-primary/20 rounded-3xl p-8 sm:p-12 text-center"
+          className="bg-primary/10 border border-primary/20 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 text-center"
         >
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
+          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-2 sm:mb-3 px-2">
             Bajo riesgo. Alta visibilidad. Escalabilidad inmediata.
           </h3>
-          <p className="text-muted-foreground mb-8 text-sm sm:text-base">
+          <p className="text-muted-foreground mb-5 sm:mb-6 md:mb-8 text-xs sm:text-sm md:text-base">
             Comienza tu piloto gratuito y mide el impacto real en tu operación
           </p>
 
@@ -129,14 +131,14 @@ const PilotSection = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 py-3 sm:py-4 bg-primary text-primary-foreground font-bold text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 group"
+            className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 bg-primary text-primary-foreground font-bold text-sm sm:text-base md:text-lg rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 group"
           >
-            <Rocket className="w-5 h-5" />
+            <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
             Solicitar piloto gratuito
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
 
-          <p className="text-xs sm:text-sm text-muted-foreground mt-4">
+          <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-3 sm:mt-4">
             Sin compromiso · Implementación en menos de 1 semana
           </p>
         </motion.div>

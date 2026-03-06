@@ -5,30 +5,11 @@ import RecaudoLogo from "./RecaudoLogo";
 
 const ContactSection = () => {
   return (
-    <section id="contacto" className="py-16 sm:py-24 px-4 sm:px-6 bg-foreground text-background relative overflow-hidden">
+    <section id="contacto" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-foreground text-background relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Gradient mesh background */}
         <motion.div
-          className="absolute inset-0 opacity-30"
-          animate={{
-            background: [
-              "radial-gradient(circle at 20% 30%, hsl(var(--primary) / 0.15) 0%, transparent 50%)",
-              "radial-gradient(circle at 80% 70%, hsl(var(--primary) / 0.15) 0%, transparent 50%)",
-              "radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%)",
-              "radial-gradient(circle at 20% 30%, hsl(var(--primary) / 0.15) 0%, transparent 50%)",
-            ],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        
-        {/* Floating orbs - more visible */}
-        <motion.div
-          className="absolute w-[500px] h-[500px] rounded-full bg-primary/10 blur-3xl"
+          className="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-primary/10 blur-3xl"
           animate={{
             x: [0, 80, 0],
             y: [0, -50, 0],
@@ -42,7 +23,7 @@ const ContactSection = () => {
           style={{ top: "-10%", left: "-15%" }}
         />
         <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full bg-blue-500/8 blur-3xl"
+          className="absolute w-[200px] sm:w-[400px] h-[200px] sm:h-[400px] rounded-full bg-blue-500/8 blur-3xl"
           animate={{
             x: [0, -60, 0],
             y: [0, 60, 0],
@@ -55,33 +36,6 @@ const ContactSection = () => {
           }}
           style={{ bottom: "-10%", right: "-10%" }}
         />
-        <motion.div
-          className="absolute w-72 h-72 rounded-full bg-primary/8 blur-2xl"
-          animate={{
-            x: [0, 40, -40, 0],
-            y: [0, -40, 40, 0],
-            scale: [1, 1.15, 0.9, 1],
-          }}
-          transition={{
-            duration: 16,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          style={{ top: "40%", right: "10%" }}
-        />
-        <motion.div
-          className="absolute w-48 h-48 rounded-full bg-secondary/10 blur-2xl"
-          animate={{
-            x: [0, -30, 30, 0],
-            y: [0, 50, -20, 0],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          style={{ top: "60%", left: "15%" }}
-        />
         
         {/* Animated grid lines */}
         <motion.div 
@@ -89,10 +43,10 @@ const ContactSection = () => {
           style={{
             backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
                               linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
-            backgroundSize: "80px 80px",
+            backgroundSize: "60px 60px",
           }}
           animate={{
-            backgroundPosition: ["0px 0px", "80px 80px"],
+            backgroundPosition: ["0px 0px", "60px 60px"],
           }}
           transition={{
             duration: 20,
@@ -100,29 +54,6 @@ const ContactSection = () => {
             ease: "linear",
           }}
         />
-        
-        {/* Floating particles */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 rounded-full bg-primary/40"
-            animate={{
-              y: [0, -100, 0],
-              x: [0, Math.sin(i) * 30, 0],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 6 + i * 2,
-              repeat: Infinity,
-              delay: i * 0.8,
-              ease: "easeInOut",
-            }}
-            style={{
-              left: `${15 + i * 15}%`,
-              bottom: "10%",
-            }}
-          />
-        ))}
       </div>
       <div className="container mx-auto max-w-4xl text-center relative z-10">
         <motion.div
@@ -131,10 +62,10 @@ const ContactSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 sm:mb-6 font-display">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 font-display px-2">
             ¿Cuándo empezamos?
           </h2>
-          <p className="text-base sm:text-xl text-background/70 mb-8 sm:mb-12 max-w-2xl mx-auto px-2">
+          <p className="text-sm sm:text-base md:text-xl text-background/70 mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto px-2">
             La IA no reemplaza trabajos; reemplaza modelos que no evolucionan.
           </p>
 
@@ -144,12 +75,12 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-background/10 backdrop-blur-sm border border-background/20 rounded-2xl p-6 sm:p-10 inline-block w-full sm:w-auto max-w-sm sm:max-w-none mx-auto"
+            className="bg-background/10 backdrop-blur-sm border border-background/20 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-10 inline-block w-full max-w-sm mx-auto"
           >
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-4 sm:gap-6">
               {/* Avatar with photo */}
               <motion.div 
-                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-4 border-primary shadow-lg"
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 sm:border-4 border-primary shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -161,17 +92,17 @@ const ContactSection = () => {
               </motion.div>
 
               <div>
-                <p className="text-sm text-background/60 mb-1">Growth Strategy</p>
-                <h3 className="text-xl font-semibold text-background">Fabián Durán</h3>
+                <p className="text-xs sm:text-sm text-background/60 mb-0.5 sm:mb-1">Growth Strategy</p>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-background">Fabián Durán</h3>
               </div>
 
-              <div className="space-y-3 text-left">
+              <div className="space-y-2 sm:space-y-3 text-left w-full">
                 <a
                   href="mailto:fabian@recaudo.ai"
-                  className="flex items-center gap-3 text-background/80 hover:text-background transition-colors group"
+                  className="flex items-center gap-2 sm:gap-3 text-background/80 hover:text-background transition-colors group text-xs sm:text-sm md:text-base"
                 >
-                  <span className="w-10 h-10 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-background/20 transition-colors">
-                    <Mail className="w-5 h-5" />
+                  <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-background/20 transition-colors flex-shrink-0">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </span>
                   fabian@recaudo.ai
                 </a>
@@ -180,10 +111,10 @@ const ContactSection = () => {
                   href="https://wa.me/573112251150"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-background/80 hover:text-background transition-colors group"
+                  className="flex items-center gap-2 sm:gap-3 text-background/80 hover:text-background transition-colors group text-xs sm:text-sm md:text-base"
                 >
-                  <span className="w-10 h-10 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-background/20 transition-colors">
-                    <MessageCircle className="w-5 h-5" />
+                  <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-background/20 transition-colors flex-shrink-0">
+                    <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                   </span>
                   +57 311 225 1150
                 </a>
@@ -192,21 +123,21 @@ const ContactSection = () => {
                   href="https://www.linkedin.com/in/fabianduranm/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-background/80 hover:text-background transition-colors group"
+                  className="flex items-center gap-2 sm:gap-3 text-background/80 hover:text-background transition-colors group text-xs sm:text-sm md:text-base"
                 >
-                  <span className="w-10 h-10 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-background/20 transition-colors">
-                    <Linkedin className="w-5 h-5" />
+                  <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-background/10 flex items-center justify-center group-hover:bg-background/20 transition-colors flex-shrink-0">
+                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                   </span>
                   LinkedIn
                 </a>
               </div>
 
-                <a
-                  href="https://wa.link/e7j55k"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base hover:scale-105 hover:shadow-lime transition-all duration-200"
-                >
+              <a
+                href="https://wa.link/e7j55k"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 sm:mt-4 w-full sm:w-auto bg-primary text-primary-foreground px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg sm:rounded-xl font-semibold text-xs sm:text-sm md:text-base hover:scale-105 hover:shadow-lime transition-all duration-200 text-center"
+              >
                 Iniciar conversación
               </a>
             </div>
@@ -219,13 +150,13 @@ const ContactSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-20 pt-8 border-t border-background/10"
+          className="mt-12 sm:mt-16 md:mt-20 pt-6 sm:pt-8 border-t border-background/10"
         >
-          <div className="flex items-center justify-center gap-1 mb-4">
-            <RecaudoLogo className="h-8" variant="black" />
-            <span className="text-background/60 text-sm">by Callbook.ai</span>
+          <div className="flex items-center justify-center gap-1 mb-3 sm:mb-4">
+            <RecaudoLogo className="h-6 sm:h-8" variant="black" />
+            <span className="text-background/60 text-xs sm:text-sm">by Callbook.ai</span>
           </div>
-          <p className="text-background/40 text-sm">
+          <p className="text-background/40 text-xs sm:text-sm">
             © 2025 Recaudo AI. Todos los derechos reservados.
           </p>
         </motion.div>
