@@ -3,7 +3,7 @@ import clientsLogos from "@/assets/clients-logos.jpg";
 
 const ClientsSection = () => {
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-foreground relative overflow-hidden">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-secondary/30 relative overflow-hidden">
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
