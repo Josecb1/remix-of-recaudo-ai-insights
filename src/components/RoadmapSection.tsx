@@ -4,26 +4,26 @@ import { FlaskConical, Rocket, Zap, ChevronRight, CheckCircle2 } from "lucide-re
 const phases = [
   {
     phase: "Fase 1",
-    title: "Pre-Piloto",
-    duration: "1-4 semanas",
+    title: "Pre-Producción",
+    duration: "1 - 3 Dias",
     icon: FlaskConical,
     items: [
-      "Despliegue controlado con número limitado de usuarios",
-      "Identificación de interacciones IA con usuarios de Selección",
-      "Todos los recursos provistos por RECAUDO AI",
+      "Diligenciamiento de formulario de las necesidades del cliente",
+      "Propuesta de la estrategia y esquema de contacto",
+      "Revisión de la base de datos para la muestra controlada",
     ],
   },
   {
     phase: "Fase 2",
     title: "Piloto",
-    duration: "1-2 meses",
+    duration: "3- 4 Semanas",
     icon: Rocket,
     items: [
-      "Validación inicial del sistema",
-      "Gestión masiva con recursos compartidos",
+      "Despliegue controlado con número limitado de usuarios",
+      "Test A/B y experimentación continua",
       "Agente resolutivo en multi-créditos",
       "Integración con procesos existentes",
-      "Test A/B y experimentación continua",
+      "Validación inicial del sistema",
     ],
   },
   {
