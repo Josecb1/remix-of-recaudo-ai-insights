@@ -2,14 +2,15 @@ import recaudoLogo from "@/assets/recaudo-logo-white.png";
 
 interface RecaudoLogoProps {
   className?: string;
+  variant?: "white" | "black";
 }
 
-const RecaudoLogo = ({ className = "h-8" }: RecaudoLogoProps) => {
+const RecaudoLogo = ({ className = "h-8", variant = "black" }: RecaudoLogoProps) => {
   return (
     <img
       src={recaudoLogo}
       alt="Recaudo"
-      className={`${className} invert`}
+      className={`${className} ${variant === "white" ? "invert" : ""}`}
     />
   );
 };
