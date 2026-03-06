@@ -201,10 +201,12 @@ const ContactSection = () => {
                 </a>
               </div>
 
-              <a
-                href="mailto:fabian@recaudo.ai"
-                className="mt-4 bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base hover:scale-105 hover:shadow-lime transition-all duration-200"
-              >
+                <a
+                  href="https://wa.link/e7j55k"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base hover:scale-105 hover:shadow-lime transition-all duration-200"
+                >
                 Iniciar conversación
               </a>
             </div>
