@@ -5,26 +5,26 @@ const phases = [
   {
     phase: "Fase 1",
     title: "Pre-Producción",
-    duration: "1 - 3 Dias",
+    duration: "1 - 3 Días",
     icon: FlaskConical,
     items: [
       "Diligenciamiento de formulario de las necesidades del cliente",
-      "Propuesta de la estrategia y esquema de contacto",
+      "Definición de expectativas y KPI",
       "Configuración del agente de llamadas IA",
       "Revisión de la base de datos para la muestra controlada",
     ],
   },
   {
     phase: "Fase 2",
-    title: "Piloto",
-    duration: "3- 4 Semanas",
+    title: "Piloto ",
+    duration: "3 Semanas",
     icon: Rocket,
     items: [
       "Despliegue controlado con número limitado de usuarios",
-      "Test A/B y experimentación continua",
-      "Agente resolutivo en multi-créditos",
-      "Integración con procesos existentes",
-      "Validación inicial del sistema",
+      "Mejora y retroalimentación del agente IA",
+      "Estrategia de marcación",
+      "Creación de dashboards e informes a la medida",
+      "Exploración de otros casos de uso",
     ],
   },
   {
@@ -33,7 +33,7 @@ const phases = [
     duration: "Tiempo indefinido",
     icon: Zap,
     items: [
-      "Descubrimiento de estrategias óptimas",
+      "Descubrimiento de estrategias óptimas y automatizaciones",
       "Estrategia masiva completamente implementada",
       "Operación continua y escalada",
       "Modelo híbrido: Full IA o IA + Humanos",
