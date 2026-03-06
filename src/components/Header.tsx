@@ -14,7 +14,7 @@ const Header = () => {
           <RecaudoLogo className="h-6 sm:h-8" variant="white" />
         </div>
         <a
-          href="https://api.whatsapp.com/send?phone=573112251150"
+          href="https://wa.link/e7j55k"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-primary text-primary-foreground px-3 sm:px-5 py-2 rounded-lg font-medium text-xs sm:text-sm hover:scale-105 hover:shadow-lime transition-all duration-200"
