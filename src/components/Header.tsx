@@ -12,7 +12,6 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <div className="flex items-center gap-1">
           <RecaudoLogo className="h-6 sm:h-8 text-foreground" />
-          <span className="text-muted-foreground text-xs sm:text-sm -ml-1 hidden sm:inline">by Callbook.ai</span>
         </div>
         <a
           href="https://api.whatsapp.com/send?phone=573112251150"
