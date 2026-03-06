@@ -36,10 +36,10 @@ const metrics = [{
   impact: "Menos quejas"
 }];
 const CompetitiveAdvantages = () => {
-  return <section id="ventajas" className="py-24 px-6 bg-background relative overflow-hidden">
+  return <section id="ventajas" className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-background relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" animate={{
+        <motion.div className="absolute top-20 left-10 w-48 sm:w-72 h-48 sm:h-72 bg-primary/5 rounded-full blur-3xl" animate={{
         scale: [1, 1.2, 1],
         x: [0, 30, 0],
         y: [0, -20, 0]
@@ -48,7 +48,7 @@ const CompetitiveAdvantages = () => {
         repeat: Infinity,
         ease: "easeInOut"
       }} />
-        <motion.div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/8 rounded-full blur-3xl" animate={{
+        <motion.div className="absolute bottom-20 right-10 w-64 sm:w-96 h-64 sm:h-96 bg-primary/8 rounded-full blur-3xl" animate={{
         scale: [1.2, 1, 1.2],
         x: [0, -40, 0],
         y: [0, 30, 0]
@@ -56,14 +56,6 @@ const CompetitiveAdvantages = () => {
         duration: 10,
         repeat: Infinity,
         ease: "easeInOut"
-      }} />
-        <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/3 to-transparent rounded-full blur-3xl" animate={{
-        rotate: [0, 360],
-        scale: [1, 1.1, 1]
-      }} transition={{
-        duration: 20,
-        repeat: Infinity,
-        ease: "linear"
       }} />
       </div>
 
@@ -78,7 +70,7 @@ const CompetitiveAdvantages = () => {
         once: true
       }} transition={{
         duration: 0.6
-      }} className="text-3xl md:text-4xl font-bold text-foreground text-center mb-8 font-display">
+      }} className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-4 sm:mb-8 font-display px-2">
           ¿Por qué Recaudo AI se destaca?
         </motion.h2>
 
@@ -94,7 +86,7 @@ const CompetitiveAdvantages = () => {
       }} transition={{
         duration: 0.6,
         delay: 0.1
-      }} className="text-lg md:text-xl text-center text-muted-foreground mb-16 max-w-4xl mx-auto">
+      }} className="text-sm sm:text-base md:text-xl text-center text-muted-foreground mb-8 sm:mb-12 md:mb-16 max-w-4xl mx-auto px-2 leading-relaxed">
           Después de atender a <span className="font-bold text-foreground">1M+ deudores</span> y recuperar{" "}
           <span className="font-bold text-foreground">$4.5M+</span>, hemos comprobado reducciones de hasta{" "}
           <span className="font-bold text-foreground">50% en costos de cobranza</span> y tasas de recuperación superiores al{" "}
@@ -111,9 +103,9 @@ const CompetitiveAdvantages = () => {
         once: true
       }} transition={{
         duration: 0.6
-      }} className="bg-card border border-border rounded-2xl shadow-card overflow-x-auto">
+      }} className="bg-card border border-border rounded-xl sm:rounded-2xl shadow-card overflow-hidden">
           {/* Mobile Card View */}
-          <div className="block sm:hidden">
+          <div className="block md:hidden">
             {metrics.map((row, idx) => (
               <motion.div
                 key={idx}
@@ -123,29 +115,29 @@ const CompetitiveAdvantages = () => {
                 transition={{ delay: idx * 0.05 }}
                 className={`p-4 border-b border-border last:border-b-0 ${idx % 2 === 0 ? "bg-background" : "bg-secondary/20"}`}
               >
-                <div className="font-semibold text-foreground mb-3">{row.metric}</div>
-                <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="font-semibold text-foreground mb-3 text-sm sm:text-base">{row.metric}</div>
+                <div className="grid grid-cols-3 gap-2 text-sm">
                   <div>
-                    <span className="text-muted-foreground text-xs block mb-1">Tradicional</span>
-                    <span className="text-foreground">{row.current}</span>
+                    <span className="text-muted-foreground text-[10px] sm:text-xs block mb-1">Tradicional</span>
+                    <span className="text-foreground text-xs sm:text-sm">{row.current}</span>
                   </div>
                   <div>
-                    <span className="text-muted-foreground text-xs block mb-1">Recaudo AI</span>
-                    <span className="inline-block px-2 py-0.5 bg-primary rounded-full text-foreground text-sm font-medium">
+                    <span className="text-muted-foreground text-[10px] sm:text-xs block mb-1">Recaudo AI</span>
+                    <span className="inline-block px-2 py-0.5 bg-primary rounded-full text-foreground text-xs sm:text-sm font-medium">
                       {row.recaudo}
                     </span>
                   </div>
-                </div>
-                <div className="mt-2 pt-2 border-t border-border/50">
-                  <span className="text-xs text-muted-foreground">Impacto: </span>
-                  <span className="text-sm font-semibold text-foreground">{row.impact}</span>
+                  <div>
+                    <span className="text-muted-foreground text-[10px] sm:text-xs block mb-1">Impacto</span>
+                    <span className="text-xs sm:text-sm font-semibold text-foreground">{row.impact}</span>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
           {/* Desktop Table View */}
-          <div className="hidden sm:block">
+          <div className="hidden md:block">
             {/* Table Header */}
             <div className="grid grid-cols-4 bg-secondary/50 border-b border-border">
               <div className="p-4 font-semibold text-muted-foreground text-sm uppercase tracking-wide">Métrica</div>
@@ -195,7 +187,7 @@ const CompetitiveAdvantages = () => {
       }} transition={{
         duration: 0.6,
         delay: 0.3
-      }} className="mt-12 text-center">
+      }} className="mt-8 sm:mt-12 text-center">
           
         </motion.div>
       </div>

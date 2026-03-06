@@ -43,7 +43,7 @@ const phases = [
 
 const RoadmapSection = () => {
   return (
-    <section className="py-24 px-6 bg-secondary/30 relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-secondary/30 relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <div className="absolute inset-0" style={{
@@ -58,20 +58,20 @@ const RoadmapSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-14 md:mb-20"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 bg-muted text-muted-foreground text-sm font-medium rounded-full mb-4"
+            className="inline-block px-3 sm:px-4 py-1.5 bg-muted text-muted-foreground text-xs sm:text-sm font-medium rounded-full mb-3 sm:mb-4"
           >
             Proceso estructurado
           </motion.span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4 font-display px-2">
             Roadmap de Implementación
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
             Un proceso estructurado para garantizar el éxito de tu transformación digital
           </p>
         </motion.div>
@@ -100,12 +100,12 @@ const RoadmapSection = () => {
                 transition={{ delay: 0.8 + idx * 0.2 }}
                 className="bg-background p-1 rounded-full"
               >
-                <ChevronRight className="w-6 h-6 text-primary" />
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </motion.div>
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 md:gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-6">
             {phases.map((phase, idx) => {
               const Icon = phase.icon;
               const isLast = idx === phases.length - 1;
@@ -117,22 +117,22 @@ const RoadmapSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.2 }}
-                  className="relative"
+                  className={`relative ${isLast ? "sm:col-span-2 md:col-span-1" : ""}`}
                 >
                   {/* Phase number badge - positioned above */}
                   <motion.div 
-                    className="flex justify-center mb-4"
+                    className="flex justify-center mb-3 sm:mb-4"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <div className={`
-                      relative w-20 h-20 rounded-2xl flex items-center justify-center z-10 
+                      relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl sm:rounded-2xl flex items-center justify-center z-10 
                       ${isLast 
                         ? 'bg-primary shadow-lg shadow-primary/30' 
                         : 'bg-card border-2 border-primary/30'
                       }
                     `}>
-                      <Icon className={`w-8 h-8 ${isLast ? 'text-primary-foreground' : 'text-primary'}`} />
+                      <Icon className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 ${isLast ? 'text-primary-foreground' : 'text-primary'}`} />
                       
                       {/* Phase number indicator */}
                       <motion.span
@@ -141,7 +141,7 @@ const RoadmapSection = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 + idx * 0.2, type: "spring" }}
                         className={`
-                          absolute -top-2 -right-2 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold
+                          absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold
                           ${isLast 
                             ? 'bg-primary-foreground text-primary' 
                             : 'bg-primary text-primary-foreground'
@@ -155,7 +155,7 @@ const RoadmapSection = () => {
 
                   {/* Mobile connector */}
                   {idx < phases.length - 1 && (
-                    <div className="md:hidden flex justify-center my-2">
+                    <div className="md:hidden flex justify-center my-1 sm:my-2 sm:hidden">
                       <motion.div
                         initial={{ opacity: 0, y: -5 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -163,8 +163,8 @@ const RoadmapSection = () => {
                         transition={{ delay: 0.6 + idx * 0.2 }}
                         className="flex flex-col items-center"
                       >
-                        <div className="w-0.5 h-8 bg-gradient-to-b from-primary/50 to-primary" />
-                        <ChevronRight className="w-5 h-5 text-primary rotate-90" />
+                        <div className="w-0.5 h-6 sm:h-8 bg-gradient-to-b from-primary/50 to-primary" />
+                        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-primary rotate-90" />
                       </motion.div>
                     </div>
                   )}
@@ -174,7 +174,7 @@ const RoadmapSection = () => {
                     whileHover={{ y: -5 }}
                     transition={{ duration: 0.2 }}
                     className={`
-                      bg-card border rounded-2xl p-6 shadow-soft h-full relative overflow-hidden
+                      bg-card border rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-soft h-full relative overflow-hidden
                       ${isLast ? 'border-primary/50' : 'border-border'}
                     `}
                   >
@@ -185,10 +185,10 @@ const RoadmapSection = () => {
 
                     <div className="relative z-10">
                       {/* Header */}
-                      <div className="text-center mb-6 pb-4 border-b border-border">
+                      <div className="text-center mb-4 sm:mb-6 pb-3 sm:pb-4 border-b border-border">
                         <motion.span 
                           className={`
-                            inline-block px-3 py-1 rounded-full text-xs font-semibold mb-2
+                            inline-block px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold mb-1.5 sm:mb-2
                             ${isLast 
                               ? 'bg-primary text-foreground' 
                               : 'bg-secondary text-muted-foreground'
@@ -197,12 +197,12 @@ const RoadmapSection = () => {
                         >
                           {phase.phase}
                         </motion.span>
-                        <h3 className="text-xl font-bold text-foreground">{phase.title}</h3>
-                        <p className="text-sm text-purple-500 font-medium mt-1">{phase.duration}</p>
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground">{phase.title}</h3>
+                        <p className="text-xs sm:text-sm text-purple-500 font-medium mt-0.5 sm:mt-1">{phase.duration}</p>
                       </div>
 
                       {/* Items with staggered animation */}
-                      <ul className="space-y-3">
+                      <ul className="space-y-2 sm:space-y-3">
                         {phase.items.map((item, i) => (
                           <motion.li 
                             key={i} 
@@ -210,9 +210,9 @@ const RoadmapSection = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.6 + idx * 0.1 + i * 0.08 }}
-                            className="flex items-start gap-3 text-sm text-muted-foreground"
+                            className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-muted-foreground"
                           >
-                            <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${isLast ? 'text-primary' : 'text-primary/60'}`} />
+                            <CheckCircle2 className={`w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 mt-0.5 ${isLast ? 'text-primary' : 'text-primary/60'}`} />
                             <span>{item}</span>
                           </motion.li>
                         ))}
