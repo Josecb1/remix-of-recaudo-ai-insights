@@ -10,6 +10,7 @@ const phases = [
     items: [
       "Diligenciamiento de formulario de las necesidades del cliente",
       "Propuesta de la estrategia y esquema de contacto",
+      "Configuración del agente de llamadas IA",
       "Revisión de la base de datos para la muestra controlada",
     ],
   },
