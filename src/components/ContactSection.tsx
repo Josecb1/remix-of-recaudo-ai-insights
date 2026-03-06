@@ -220,7 +220,7 @@ const ContactSection = () => {
           className="mt-20 pt-8 border-t border-background/10"
         >
           <div className="flex items-center justify-center gap-1 mb-4">
-            <RecaudoLogo className="h-8 text-background" />
+            <RecaudoLogo className="h-8" variant="black" />
             <span className="text-background/60 text-sm">by Callbook.ai</span>
           </div>
           <p className="text-background/40 text-sm">
