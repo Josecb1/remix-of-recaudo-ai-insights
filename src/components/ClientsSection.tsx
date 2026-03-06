@@ -12,8 +12,8 @@ const ClientsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 sm:mb-12"
         >
-          <div className="w-16 h-px bg-background/40 mx-auto mb-6" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-background font-display">
+          <div className="w-16 h-px bg-foreground/20 mx-auto mb-6" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground font-display">
             Confían en nosotros
           </h2>
         </motion.div>
@@ -27,7 +27,7 @@ const ClientsSection = () => {
         >
           <img
             alt="Empresas que confían en Recaudo AI - Esri, AutoMundial, Righa, KrediYA, CasaToro, Banco W, ARMI, Haceb, Cavipetrol, Inter Image, SIS, Banco Contactar, LiliPink, Quipux, Avanzo, CrediAlianza, Practi, Sistecrédito, Clara, Epik, Finky, Aseguradora Solidaria, LaRueda, Quick, Seguros Bolívar"
-            className="w-full h-auto object-contain mx-auto max-w-5xl"
+            className="w-full h-auto object-contain mx-auto max-w-5xl invert"
             src={clientsLogos}
             loading="lazy"
           />
