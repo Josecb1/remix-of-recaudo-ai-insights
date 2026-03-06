@@ -9,7 +9,7 @@ const RecaudoLogo = ({ className = "h-8" }: RecaudoLogoProps) => {
     <img
       src={recaudoLogo}
       alt="Recaudo"
-      className={className}
+      className={`${className} invert`}
     />
   );
 };
