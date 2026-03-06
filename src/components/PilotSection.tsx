@@ -48,7 +48,7 @@ const PilotSection = () => {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-3 bg-primary/20 border-2 border-primary/60 text-primary font-bold rounded-full text-sm sm:text-lg mb-6"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-3 bg-royal/20 border-2 border-royal/60 text-royal font-bold rounded-full text-sm sm:text-lg mb-6"
           >
             <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
             $0 DE INVERSIÓN INICIAL
