@@ -82,7 +82,7 @@ const ProblemSection = () => {
           El modelo actual enfrenta limitaciones críticas que impactan la recuperación.
         </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {problems.map((problem, idx) => <motion.div key={idx} initial={{
           opacity: 0,
           y: 20
@@ -96,7 +96,7 @@ const ProblemSection = () => {
           delay: idx * 0.1
         }} className="relative">
               <div className="bg-card border border-border rounded-lg sm:rounded-xl p-4 sm:p-6 h-full">
-                <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex sm:flex-row items-start gap-3 sm:gap-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-muted rounded-lg flex items-center justify-center flex-shrink-0">
                     <problem.icon className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
                   </div>
