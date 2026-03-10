@@ -60,8 +60,8 @@ const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof c
 };
 
 const ClientsSection = () => {
-  const firstHalf = clients.slice(0, 11);
-  const secondHalf = clients.slice(11);
+  const firstHalf = clients.slice(0, 5);
+  const secondHalf = clients.slice(5);
 
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 bg-secondary/30 relative overflow-hidden">
