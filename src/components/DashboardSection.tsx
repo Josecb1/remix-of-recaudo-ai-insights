@@ -87,9 +87,9 @@ const DashboardSection = () => {
                   <p className="text-xs sm:text-sm text-muted-foreground font-medium">Tipificación exhaustiva</p>
                   
                   {/* Donut chart visual */}
-                  <div className="flex items-center gap-4 sm:gap-6">
-                    <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0">
-                      <svg className="w-full h-full transform -rotate-90">
+                  <div className="flex flex-col items-center gap-3 min-[420px]:flex-row min-[420px]:items-center sm:gap-6">
+                    <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
+                      <svg viewBox="0 0 96 96" className="w-full h-full transform -rotate-90">
                         {[
                           { percent: 25, color: "hsl(var(--primary))", offset: 0 },
                           { percent: 20, color: "hsl(var(--primary) / 0.7)", offset: 25 },
@@ -115,7 +115,7 @@ const DashboardSection = () => {
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <motion.span 
-                          className="text-sm sm:text-lg font-bold text-foreground"
+                          className="text-base sm:text-lg font-bold text-foreground"
                           initial={{ opacity: 0, scale: 0 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
@@ -126,7 +126,7 @@ const DashboardSection = () => {
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-1.5 sm:gap-2 flex-1">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 sm:gap-2 w-full min-[420px]:flex-1">
                       {[
                         { name: "Disputa", percent: 25, color: "bg-primary" },
                         { name: "Dificultad", percent: 20, color: "bg-primary/70" },
@@ -141,9 +141,9 @@ const DashboardSection = () => {
                           transition={{ delay: 0.4 + idx * 0.1 }}
                           className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm cursor-default"
                         >
-                          <span className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${item.color} rounded-sm`} />
-                          <span className="text-foreground">{item.name}</span>
-                          <span className="text-muted-foreground text-[10px] sm:text-xs ml-auto">{item.percent}%</span>
+                          <span className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${item.color} rounded-sm flex-shrink-0`} />
+                          <span className="text-foreground truncate">{item.name}</span>
+                          <span className="text-muted-foreground text-[10px] sm:text-xs ml-auto flex-shrink-0">{item.percent}%</span>
                         </motion.div>
                       ))}
                     </div>
