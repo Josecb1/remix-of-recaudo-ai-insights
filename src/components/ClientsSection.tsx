@@ -1,27 +1,15 @@
 import { motion } from "framer-motion";
 
-import armi from "@/assets/clients/armi.png";
-import aseguradora from "@/assets/clients/aseguradora.png";
 import automundial from "@/assets/clients/automundial.png";
-import avanzo from "@/assets/clients/avanzo.png";
 import bancocontactar from "@/assets/clients/bancocontactar.png";
 import bancow from "@/assets/clients/bancow.png";
 import casatoro from "@/assets/clients/casatoro.png";
 import cavipetrol from "@/assets/clients/cavipetrol.png";
-import clara from "@/assets/clients/clara.png";
-import credialianza from "@/assets/clients/credialianza.png";
-import epik from "@/assets/clients/epik.png";
-import esri from "@/assets/clients/esri.png";
-import finky from "@/assets/clients/finky.png";
-import haceb from "@/assets/clients/haceb.png";
-import interimage from "@/assets/clients/interimage.png";
 import krediya from "@/assets/clients/krediya.png";
 import lilipink from "@/assets/clients/lilipink.png";
-import practi from "@/assets/clients/practi.png";
 import quipux from "@/assets/clients/quipux.png";
 import righa from "@/assets/clients/righa.png";
 import sis from "@/assets/clients/sis.png";
-import sistecredito from "@/assets/clients/sistecredito.png";
 
 const clients = [
   { name: "Esri", logo: esri },
