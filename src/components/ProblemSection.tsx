@@ -96,7 +96,7 @@ const ProblemCard = ({ problem, idx }: { problem: typeof problems[0]; idx: numbe
             </p>
 
             {/* Expand indicator */}
-            <div className="flex items-center gap-1 mt-2 text-[10px] sm:text-xs text-primary/60 group-hover:text-primary transition-colors">
+            <div className="flex items-center gap-1 mt-2 text-[10px] sm:text-xs text-destructive/60 group-hover:text-destructive transition-colors">
               <motion.div animate={{ rotate: isExpanded ? 90 : 0 }} transition={{ duration: 0.2 }}>
                 <ChevronRight className="w-3 h-3" />
               </motion.div>
