@@ -87,7 +87,7 @@ const DashboardSection = () => {
                   <p className="text-xs sm:text-sm text-muted-foreground font-medium">Tipificación exhaustiva</p>
                   
                   {/* Donut chart visual */}
-                  <div className="flex flex-col items-center gap-3 xs:flex-row xs:items-center sm:gap-6">
+                  <div className="flex flex-col items-center gap-3 min-[420px]:flex-row min-[420px]:items-center sm:gap-6">
                     <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
                       <svg viewBox="0 0 96 96" className="w-full h-full transform -rotate-90">
                         {[
