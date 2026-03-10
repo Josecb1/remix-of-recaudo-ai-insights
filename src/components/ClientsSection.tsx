@@ -10,6 +10,12 @@ import lilipink from "@/assets/clients/lilipink.png";
 import quipux from "@/assets/clients/quipux.png";
 import righa from "@/assets/clients/righa.png";
 import sis from "@/assets/clients/sis.png";
+import sistecredito from "@/assets/clients/sistecredito.png";
+import clara from "@/assets/clients/clara.png";
+import epik from "@/assets/clients/epik.png";
+import finky from "@/assets/clients/finky.png";
+import aseguradora from "@/assets/clients/aseguradora.png";
+import segurosbolivar from "@/assets/clients/segurosbolivar.png";
 
 const clients = [
   { name: "KrediYA", logo: krediya },
@@ -22,6 +28,12 @@ const clients = [
   { name: "Banco Contactar", logo: bancocontactar },
   { name: "LiliPink", logo: lilipink },
   { name: "Quipux", logo: quipux },
+  { name: "Sistecredito", logo: sistecredito },
+  { name: "Clara", logo: clara },
+  { name: "Epik", logo: epik },
+  { name: "Finky", logo: finky },
+  { name: "Aseguradora Solidaria", logo: aseguradora },
+  { name: "Seguros Bolívar", logo: segurosbolivar },
 ];
 
 const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof clients; direction?: "left" | "right"; speed?: number }) => {
@@ -44,7 +56,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof c
         {doubled.map((client, idx) => (
           <div
             key={`${client.name}-${idx}`}
-            className="flex-shrink-0 h-8 sm:h-10 md:h-12 w-20 sm:w-28 md:w-32 flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+            className="flex-shrink-0 h-10 sm:h-12 md:h-14 w-28 sm:w-36 md:w-40 flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 p-2"
           >
             <img
               src={client.logo}
@@ -60,8 +72,8 @@ const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof c
 };
 
 const ClientsSection = () => {
-  const firstHalf = clients.slice(0, 5);
-  const secondHalf = clients.slice(5);
+  const firstHalf = clients.slice(0, 8);
+  const secondHalf = clients.slice(8);
 
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 bg-secondary/30 relative overflow-hidden">
@@ -112,7 +124,7 @@ const ClientsSection = () => {
           className="text-center mb-6 sm:mb-8"
         >
           <span className="inline-flex items-center gap-2 text-muted-foreground text-[10px] sm:text-xs font-medium uppercase tracking-wider bg-muted px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full mb-3 sm:mb-4">
-            +10 empresas confían en nosotros
+            +16 empresas confían en nosotros
           </span>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground font-display">
             Confían en nosotros
