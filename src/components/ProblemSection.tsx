@@ -113,9 +113,9 @@ const ProblemCard = ({ problem, idx }: { problem: typeof problems[0]; idx: numbe
             <problem.icon className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
           </motion.div>
           <div className="flex-1 min-w-0">
-            <div className="flex items-baseline gap-1.5 sm:gap-2 mb-0.5 sm:mb-1 flex-wrap">
+            <div className="mb-0.5 sm:mb-1">
               <motion.span
-                className="text-xl sm:text-2xl font-bold text-foreground"
+                className="text-xl sm:text-2xl font-bold text-foreground block"
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
