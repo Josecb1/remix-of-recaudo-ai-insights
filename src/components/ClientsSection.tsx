@@ -124,7 +124,7 @@ const ClientsSection = () => {
           className="text-center mb-6 sm:mb-8"
         >
           <span className="inline-flex items-center gap-2 text-muted-foreground text-[10px] sm:text-xs font-medium uppercase tracking-wider bg-muted px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full mb-3 sm:mb-4">
-            +10 empresas confían en nosotros
+            +16 empresas confían en nosotros
           </span>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground font-display">
             Confían en nosotros
