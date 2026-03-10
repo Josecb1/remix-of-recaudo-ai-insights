@@ -1,51 +1,27 @@
 import { motion } from "framer-motion";
 
-import armi from "@/assets/clients/armi.png";
-import aseguradora from "@/assets/clients/aseguradora.png";
 import automundial from "@/assets/clients/automundial.png";
-import avanzo from "@/assets/clients/avanzo.png";
 import bancocontactar from "@/assets/clients/bancocontactar.png";
 import bancow from "@/assets/clients/bancow.png";
 import casatoro from "@/assets/clients/casatoro.png";
 import cavipetrol from "@/assets/clients/cavipetrol.png";
-import clara from "@/assets/clients/clara.png";
-import credialianza from "@/assets/clients/credialianza.png";
-import epik from "@/assets/clients/epik.png";
-import esri from "@/assets/clients/esri.png";
-import finky from "@/assets/clients/finky.png";
-import haceb from "@/assets/clients/haceb.png";
-import interimage from "@/assets/clients/interimage.png";
 import krediya from "@/assets/clients/krediya.png";
 import lilipink from "@/assets/clients/lilipink.png";
-import practi from "@/assets/clients/practi.png";
 import quipux from "@/assets/clients/quipux.png";
 import righa from "@/assets/clients/righa.png";
 import sis from "@/assets/clients/sis.png";
-import sistecredito from "@/assets/clients/sistecredito.png";
 
 const clients = [
-  { name: "Esri", logo: esri },
+  { name: "KrediYA", logo: krediya },
   { name: "AutoMundial", logo: automundial },
   { name: "Righa", logo: righa },
-  { name: "KrediYA", logo: krediya },
   { name: "CasaToro", logo: casatoro },
   { name: "Banco W", logo: bancow },
-  { name: "ARMI", logo: armi },
-  { name: "Haceb", logo: haceb },
   { name: "Cavipetrol", logo: cavipetrol },
-  { name: "Inter Image", logo: interimage },
   { name: "SIS", logo: sis },
   { name: "Banco Contactar", logo: bancocontactar },
   { name: "LiliPink", logo: lilipink },
   { name: "Quipux", logo: quipux },
-  { name: "Avanzo", logo: avanzo },
-  { name: "CrediAlianza", logo: credialianza },
-  { name: "Practi", logo: practi },
-  { name: "Sistecrédito", logo: sistecredito },
-  { name: "Clara", logo: clara },
-  { name: "Epik", logo: epik },
-  { name: "Finky", logo: finky },
-  { name: "Aseguradora Solidaria", logo: aseguradora },
 ];
 
 const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof clients; direction?: "left" | "right"; speed?: number }) => {
@@ -84,8 +60,8 @@ const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof c
 };
 
 const ClientsSection = () => {
-  const firstHalf = clients.slice(0, 11);
-  const secondHalf = clients.slice(11);
+  const firstHalf = clients.slice(0, 5);
+  const secondHalf = clients.slice(5);
 
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 bg-secondary/30 relative overflow-hidden">
@@ -136,7 +112,7 @@ const ClientsSection = () => {
           className="text-center mb-6 sm:mb-8"
         >
           <span className="inline-flex items-center gap-2 text-muted-foreground text-[10px] sm:text-xs font-medium uppercase tracking-wider bg-muted px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full mb-3 sm:mb-4">
-            +22 empresas confían en nosotros
+            +10 empresas confían en nosotros
           </span>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground font-display">
             Confían en nosotros
