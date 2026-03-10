@@ -12,28 +12,16 @@ import righa from "@/assets/clients/righa.png";
 import sis from "@/assets/clients/sis.png";
 
 const clients = [
-  { name: "Esri", logo: esri },
+  { name: "KrediYA", logo: krediya },
   { name: "AutoMundial", logo: automundial },
   { name: "Righa", logo: righa },
-  { name: "KrediYA", logo: krediya },
   { name: "CasaToro", logo: casatoro },
   { name: "Banco W", logo: bancow },
-  { name: "ARMI", logo: armi },
-  { name: "Haceb", logo: haceb },
   { name: "Cavipetrol", logo: cavipetrol },
-  { name: "Inter Image", logo: interimage },
   { name: "SIS", logo: sis },
   { name: "Banco Contactar", logo: bancocontactar },
   { name: "LiliPink", logo: lilipink },
   { name: "Quipux", logo: quipux },
-  { name: "Avanzo", logo: avanzo },
-  { name: "CrediAlianza", logo: credialianza },
-  { name: "Practi", logo: practi },
-  { name: "Sistecrédito", logo: sistecredito },
-  { name: "Clara", logo: clara },
-  { name: "Epik", logo: epik },
-  { name: "Finky", logo: finky },
-  { name: "Aseguradora Solidaria", logo: aseguradora },
 ];
 
 const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof clients; direction?: "left" | "right"; speed?: number }) => {
