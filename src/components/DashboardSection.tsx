@@ -126,7 +126,7 @@ const DashboardSection = () => {
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 sm:gap-2 w-full xs:flex-1">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 sm:gap-2 w-full min-[420px]:flex-1">
                       {[
                         { name: "Disputa", percent: 25, color: "bg-primary" },
                         { name: "Dificultad", percent: 20, color: "bg-primary/70" },
