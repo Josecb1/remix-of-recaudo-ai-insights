@@ -10,6 +10,12 @@ import lilipink from "@/assets/clients/lilipink.png";
 import quipux from "@/assets/clients/quipux.png";
 import righa from "@/assets/clients/righa.png";
 import sis from "@/assets/clients/sis.png";
+import sistecredito from "@/assets/clients/sistecredito.png";
+import clara from "@/assets/clients/clara.png";
+import epik from "@/assets/clients/epik.png";
+import finky from "@/assets/clients/finky.png";
+import aseguradora from "@/assets/clients/aseguradora.png";
+import segurosbolivar from "@/assets/clients/segurosbolivar.png";
 
 const clients = [
   { name: "KrediYA", logo: krediya },
@@ -22,6 +28,12 @@ const clients = [
   { name: "Banco Contactar", logo: bancocontactar },
   { name: "LiliPink", logo: lilipink },
   { name: "Quipux", logo: quipux },
+  { name: "Sistecredito", logo: sistecredito },
+  { name: "Clara", logo: clara },
+  { name: "Epik", logo: epik },
+  { name: "Finky", logo: finky },
+  { name: "Aseguradora Solidaria", logo: aseguradora },
+  { name: "Seguros Bolívar", logo: segurosbolivar },
 ];
 
 const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof clients; direction?: "left" | "right"; speed?: number }) => {
