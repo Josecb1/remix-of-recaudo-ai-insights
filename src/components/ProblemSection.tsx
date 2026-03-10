@@ -1,5 +1,5 @@
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useState } from "react";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import { useState, useRef } from "react";
 import { TrendingDown, DollarSign, ShieldOff, AlertTriangle, ChevronRight } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
@@ -51,29 +51,66 @@ const problems: {
 
 const ProblemCard = ({ problem, idx }: { problem: typeof problems[0]; idx: number }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), { stiffness: 200, damping: 20 });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-6, 6]), { stiffness: 200, damping: 20 });
+  const glareX = useSpring(useTransform(mouseX, [-0.5, 0.5], [0, 100]), { stiffness: 200, damping: 20 });
+  const glareY = useSpring(useTransform(mouseY, [-0.5, 0.5], [0, 100]), { stiffness: 200, damping: 20 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: idx * 0.1 }}
-      className="relative group"
+      className="relative group perspective-[800px]"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ perspective: 800 }}
     >
       <motion.div
         layout
         onClick={() => setIsExpanded(!isExpanded)}
-        className="bg-card border border-border rounded-lg sm:rounded-xl p-4 sm:p-6 h-full cursor-pointer transition-all duration-300 hover:border-primary/30 hover:shadow-md"
-        whileHover={{ y: -2 }}
-        whileTap={{ scale: 0.99 }}
+        className="bg-card border border-border rounded-lg sm:rounded-xl p-4 sm:p-6 h-full cursor-pointer transition-colors duration-300 hover:border-primary/30 relative overflow-hidden"
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        whileTap={{ scale: 0.98 }}
       >
-        <div className="flex items-start gap-3 sm:gap-4">
+        {/* Dynamic glare overlay */}
+        <motion.div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg sm:rounded-xl"
+          style={{
+            background: useTransform(
+              [glareX, glareY],
+              ([x, y]) => `radial-gradient(circle at ${x}% ${y}%, hsl(var(--primary) / 0.08) 0%, transparent 60%)`
+            ),
+          }}
+        />
+
+        <div className="flex items-start gap-3 sm:gap-4 relative z-10">
           <motion.div
             className="w-8 h-8 sm:w-10 sm:h-10 bg-muted rounded-lg flex items-center justify-center flex-shrink-0"
-            whileHover={{ rotate: 8, scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            style={{ transformStyle: "preserve-3d", translateZ: 20 }}
           >
-            <problem.icon className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
+            <problem.icon className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
           </motion.div>
           <div className="flex-1 min-w-0">
             <div className="flex items-baseline gap-1.5 sm:gap-2 mb-0.5 sm:mb-1 flex-wrap">
@@ -95,7 +132,6 @@ const ProblemCard = ({ problem, idx }: { problem: typeof problems[0]; idx: numbe
               {problem.description}
             </p>
 
-            {/* Expand indicator */}
             <div className="flex items-center gap-1 mt-2 text-[10px] sm:text-xs text-destructive/60 group-hover:text-destructive transition-colors">
               <motion.div animate={{ rotate: isExpanded ? 90 : 0 }} transition={{ duration: 0.2 }}>
                 <ChevronRight className="w-3 h-3" />
@@ -105,7 +141,6 @@ const ProblemCard = ({ problem, idx }: { problem: typeof problems[0]; idx: numbe
           </div>
         </div>
 
-        {/* Expandable details */}
         <motion.div
           initial={false}
           animate={{
@@ -113,7 +148,7 @@ const ProblemCard = ({ problem, idx }: { problem: typeof problems[0]; idx: numbe
             opacity: isExpanded ? 1 : 0,
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="overflow-hidden"
+          className="overflow-hidden relative z-10"
         >
           <div className="pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-border space-y-2">
             {problem.details.map((detail, i) => (
