@@ -62,7 +62,7 @@ const ContactSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 font-display px-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 font-display px-2 leading-tight">
             ¿Cuándo empezamos?
           </h2>
           <p className="text-sm sm:text-base md:text-xl text-background/70 mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto px-2">

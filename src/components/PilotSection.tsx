@@ -56,7 +56,7 @@ const PilotSection = () => {
           </motion.div>
 
           <motion.h2
-            className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6 font-display px-2"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4 md:mb-6 font-display px-2 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

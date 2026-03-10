@@ -4,7 +4,7 @@ import heroRobot from "@/assets/hero-robot-final.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-6 overflow-hidden">
+    <section className="relative min-h-[100svh] flex flex-col items-center justify-center pt-16 sm:pt-20 pb-12 sm:pb-16 px-4 sm:px-6 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img 
