@@ -56,7 +56,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof c
         {doubled.map((client, idx) => (
           <div
             key={`${client.name}-${idx}`}
-            className="flex-shrink-0 h-8 sm:h-10 md:h-12 w-20 sm:w-28 md:w-32 flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300"
+            className="flex-shrink-0 h-10 sm:h-12 md:h-14 w-28 sm:w-36 md:w-40 flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 p-2"
           >
             <img
               src={client.logo}
