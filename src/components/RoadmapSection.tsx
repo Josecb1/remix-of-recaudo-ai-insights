@@ -154,9 +154,9 @@ const RoadmapSection = () => {
                     </div>
                   </motion.div>
 
-                  {/* Mobile connector */}
+                  {/* Mobile connector - visible only on single-column (below sm) */}
                   {idx < phases.length - 1 && (
-                    <div className="md:hidden flex justify-center my-1 sm:my-2 sm:hidden">
+                    <div className="flex justify-center my-1 sm:hidden">
                       <motion.div
                         initial={{ opacity: 0, y: -5 }}
                         whileInView={{ opacity: 1, y: 0 }}
