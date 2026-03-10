@@ -16,6 +16,7 @@ import epik from "@/assets/clients/epik.png";
 import finky from "@/assets/clients/finky.png";
 import aseguradora from "@/assets/clients/aseguradora.png";
 import segurosbolivar from "@/assets/clients/segurosbolivar.png";
+import mundomujer from "@/assets/clients/mundomujer.png";
 
 const clients = [
   { name: "KrediYA", logo: krediya },
@@ -34,6 +35,7 @@ const clients = [
   { name: "Finky", logo: finky },
   { name: "Aseguradora Solidaria", logo: aseguradora },
   { name: "Seguros Bolívar", logo: segurosbolivar },
+  { name: "Mundo Mujer", logo: mundomujer },
 ];
 
 const MarqueeRow = ({ items, direction = "left", speed = 30 }: { items: typeof clients; direction?: "left" | "right"; speed?: number }) => {
