@@ -6,7 +6,6 @@ import bancow from "@/assets/clients/bancow.png";
 import casatoro from "@/assets/clients/casatoro.png";
 import cavipetrol from "@/assets/clients/cavipetrol.png";
 import krediya from "@/assets/clients/krediya.png";
-import lilipink from "@/assets/clients/lilipink.png";
 import quipux from "@/assets/clients/quipux.png";
 import righa from "@/assets/clients/righa.png";
 import sis from "@/assets/clients/sis.png";
@@ -19,26 +18,33 @@ import segurosbolivar from "@/assets/clients/segurosbolivar.png";
 import mundomujer from "@/assets/clients/mundomujer.png";
 
 const clients = [
-{ name: "KrediYA", logo: krediya },
-{ name: "AutoMundial", logo: automundial },
-{ name: "Righa", logo: righa },
-{ name: "CasaToro", logo: casatoro },
-{ name: "Banco W", logo: bancow },
-{ name: "Cavipetrol", logo: cavipetrol },
-{ name: "SIS", logo: sis },
-{ name: "Banco Contactar", logo: bancocontactar },
-{ name: "LiliPink", logo: lilipink },
-{ name: "Quipux", logo: quipux },
-{ name: "Sistecredito", logo: sistecredito },
-{ name: "Clara", logo: clara },
-{ name: "Epik", logo: epik },
-{ name: "Finky", logo: finky },
-{ name: "Aseguradora Solidaria", logo: aseguradora },
-{ name: "Seguros Bolívar", logo: segurosbolivar },
-{ name: "Mundo Mujer", logo: mundomujer }];
+  { name: "KrediYA", logo: krediya },
+  { name: "AutoMundial", logo: automundial },
+  { name: "Righa", logo: righa },
+  { name: "CasaToro", logo: casatoro },
+  { name: "Banco W", logo: bancow },
+  { name: "Cavipetrol", logo: cavipetrol },
+  { name: "SIS", logo: sis },
+  { name: "Banco Contactar", logo: bancocontactar },
+  { name: "Quipux", logo: quipux },
+  { name: "Sistecredito", logo: sistecredito },
+  { name: "Clara", logo: clara },
+  { name: "Epik", logo: epik },
+  { name: "Finky", logo: finky },
+  { name: "Aseguradora Solidaria", logo: aseguradora },
+  { name: "Seguros Bolívar", logo: segurosbolivar },
+  { name: "Mundo Mujer", logo: mundomujer },
+];
 
-
-const MarqueeRow = ({ items, direction = "left", speed = 30 }: {items: typeof clients;direction?: "left" | "right";speed?: number;}) => {
+const MarqueeRow = ({
+  items,
+  direction = "left",
+  speed = 30,
+}: {
+  items: typeof clients;
+  direction?: "left" | "right";
+  speed?: number;
+}) => {
   const doubled = [...items, ...items];
 
   return (
@@ -51,26 +57,26 @@ const MarqueeRow = ({ items, direction = "left", speed = 30 }: {items: typeof cl
         className="flex gap-6 sm:gap-10 items-center w-max"
         animate={{ x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"] }}
         transition={{
-          x: { duration: speed, repeat: Infinity, ease: "linear" }
+          x: { duration: speed, repeat: Infinity, ease: "linear" },
         }}
-        style={{ willChange: "transform" }}>
-        
-        {doubled.map((client, idx) =>
-        <div
-          key={`${client.name}-${idx}`}
-          className="flex-shrink-0 h-14 sm:h-16 md:h-20 w-36 sm:w-44 md:w-52 flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 p-2">
-          
+        style={{ willChange: "transform" }}
+      >
+        {doubled.map((client, idx) => (
+          <div
+            key={`${client.name}-${idx}`}
+            className="flex-shrink-0 h-14 sm:h-16 md:h-20 w-36 sm:w-44 md:w-52 flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 p-2"
+          >
             <img
-            src={client.logo}
-            alt={client.name}
-            className="max-h-full max-w-full object-contain"
-            loading="lazy" />
-          
+              src={client.logo}
+              alt={client.name}
+              className="max-h-full max-w-full object-contain"
+              loading="lazy"
+            />
           </div>
-        )}
+        ))}
       </motion.div>
-    </div>);
-
+    </div>
+  );
 };
 
 const ClientsSection = () => {
@@ -88,16 +94,17 @@ const ClientsSection = () => {
             x: [0, 90, -40, 50, 0],
             y: [0, -50, 30, -20, 0],
             borderRadius: [
-            "40% 60% 70% 30% / 40% 50% 60% 50%",
-            "70% 30% 50% 50% / 30% 30% 70% 70%",
-            "50% 60% 30% 60% / 50% 40% 50% 60%",
-            "30% 60% 70% 40% / 50% 60% 30% 60%",
-            "40% 60% 70% 30% / 40% 50% 60% 50%"]
-
+              "40% 60% 70% 30% / 40% 50% 60% 50%",
+              "70% 30% 50% 50% / 30% 30% 70% 70%",
+              "50% 60% 30% 60% / 50% 40% 50% 60%",
+              "30% 60% 70% 40% / 50% 60% 30% 60%",
+              "40% 60% 70% 30% / 40% 50% 60% 50%",
+            ],
           }}
           transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-          style={{ top: "-15%", left: "-5%" }} />
-        
+          style={{ top: "-15%", left: "-5%" }}
+        />
+
         <motion.div
           className="absolute w-[280px] h-[280px] bg-gradient-to-tl from-sky-light/40 to-primary/8 blur-3xl"
           animate={{
@@ -105,16 +112,16 @@ const ClientsSection = () => {
             x: [0, -60, 40, -20, 0],
             y: [0, 40, -30, 20, 0],
             borderRadius: [
-            "60% 40% 30% 70% / 60% 30% 70% 40%",
-            "30% 60% 70% 40% / 50% 60% 30% 60%",
-            "40% 60% 70% 30% / 40% 50% 60% 50%",
-            "70% 30% 50% 50% / 30% 30% 70% 70%",
-            "60% 40% 30% 70% / 60% 30% 70% 40%"]
-
+              "60% 40% 30% 70% / 60% 30% 70% 40%",
+              "30% 60% 70% 40% / 50% 60% 30% 60%",
+              "40% 60% 70% 30% / 40% 50% 60% 50%",
+              "70% 30% 50% 50% / 30% 30% 70% 70%",
+              "60% 40% 30% 70% / 60% 30% 70% 40%",
+            ],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          style={{ bottom: "-10%", right: "-8%" }} />
-        
+          style={{ bottom: "-10%", right: "-8%" }}
+        />
       </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -123,11 +130,8 @@ const ClientsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-6 sm:mb-8">
-          
-          
-
-          
+          className="text-center mb-6 sm:mb-8"
+        >
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground font-display">
             Confían en nosotros
           </h2>
@@ -137,14 +141,14 @@ const ClientsSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}>
-          
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <MarqueeRow items={firstHalf} direction="left" speed={25} />
           <MarqueeRow items={secondHalf} direction="right" speed={30} />
         </motion.div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default ClientsSection;
